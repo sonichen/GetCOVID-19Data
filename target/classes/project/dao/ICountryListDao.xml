@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="project.dao.ICountryListDao">
+
+
+    <select id="findAll" resultType="project.domain.CountryList">
+        select * from countrylist
+    </select>
+
+
+    <insert id="saveCountryList"  parameterType="project.domain.CountryList">
+        insert into countrylist (iso,countryName) values (#{iso},#{countryName})
+    </insert>
+    <delete id="deleteCountryList">
+        delete from  countrylist
+    </delete>
+</mapper>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="project.dao.ICountryDetailsDao">
+
+
+    <select id="findAll" parameterType="String" resultType="project.domain.CountryDetails">
+        SELECT countrydetails.*
+        FROM countrydetails
+        JOIN countrylist
+        ON countrydetails.iso_country=countrylist.iso
+        WHERE countryName=#{countryName}
+    </select>
+
+
+    <insert id="saveCountryDetails"  parameterType="project.domain.CountryDetails">
+        insert into countrydetails
+        (  iso_country,continent,capital_city,life_expectancy,abbreviation,confirmed, population,sq_km_area,recovered,elevation_in_meters,location,deaths)
+        values
+        ( #{iso_country},#{continent},#{capital_city},#{life_expectancy},
+        #{abbreviation},#{confirmed}, #{population},#{sq_km_area},#{recovered},
+        #{elevation_in_meters},#{location},#{deaths} )
+    </insert>
+
+    <delete id="deleteCountryDetails">
+        delete from countrydetails
+    </delete>
+
+</mapper>
+
