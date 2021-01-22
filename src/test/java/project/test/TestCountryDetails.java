@@ -54,16 +54,6 @@ public class TestCountryDetails {
 
 
     }
-//    @Test
-//    public void saveProvince(){
-//        GetData getData=new GetData();
-//        ArrayList<User> users=getData.push();
-//        for(int i=0;i<users.size();i++){
-//            User user=users.get(i);
-//            userDao.saveUser(user);
-//            System.out.println("保存成功");
-//        }
-//
-//    }
+
 
 }
